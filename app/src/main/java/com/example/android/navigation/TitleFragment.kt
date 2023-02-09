@@ -1,6 +1,8 @@
 package com.example.android.navigation
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
@@ -30,8 +32,59 @@ class TitleFragment : Fragment() {
                 .navigate(TitleFragmentDirections.actionTitleFragment2ToGameFragment()) }
         // 사용자가 메뉴 항목을 탭할때 동작을 구현하는 코드 추가
         setHasOptionsMenu(true)
+
+        Log.i("TitleFragment", "onCreateView called")
+
         return binding.root
         }
+
+    // 프래그먼트 수명 주기 메서드
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.i("TitleFragment", "onAttach called")
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.i("TitleFragment", "onCreate called")
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.i("TitleFragment", "onViewCreated called")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("TitleFragment", "onStart called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("TitleFragment", "onResume called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("TitleFragment", "onPause called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("TitleFragment", "onStop called")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.i("TitleFragment", "onDestroyView called")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.i("TitleFragment", "onDetach called")
+    }
+
 
     // 미리 만든 menu 리소스를 해당 메서드를 통해서 가져 온다.
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
